@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { JobPosition } from '../types';
-import { staggerContainer, fadeInUp } from '../types';
-import { JobCard } from './JobCard';
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+
+import { motion } from "framer-motion";
+import { staggerContainer, type JobPosition } from "../types";
 
 interface JobListingsProps {
   jobs: JobPosition[];
 }
 
-export const JobListings = ({ jobs }: JobListingsProps) => {
+export const JobListings = ({}: JobListingsProps) => {
   return (
     <section id="open-positions" className="container mx-auto px-4 py-16">
       <motion.div
@@ -20,10 +20,6 @@ export const JobListings = ({ jobs }: JobListingsProps) => {
         className="text-center mb-12"
       >
         <h2 className="text-3xl font-bold mb-4">Vagas abertas</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Estamos sempre em busca de talentos para se juntar à nossa equipe.
-          Confira nossas vagas disponíveis.
-        </p>
       </motion.div>
 
       <motion.div
@@ -31,11 +27,25 @@ export const JobListings = ({ jobs }: JobListingsProps) => {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2 md:px-0"
+        className="flex flex-col items-center justify-center gap-5 mb-12"
       >
-        {jobs.map((job, index) => (
-          <JobCard key={index} job={job} variants={fadeInUp} />
-        ))}
+        <div className="w-48 h-48">
+          <DotLottieReact src="assets/animations/sad.lottie" loop autoplay />
+        </div>
+
+        <p className="text-muted-foreground max-w-2xl mx-auto text-center text-lg font-medium">
+          <span className="block text-primary font-semibold mb-1">
+            No momento, não temos vagas abertas.
+          </span>
+          Não se preocupe! Envie seu currículo para{" "}
+          <a
+            className="underline text-blue-600 hover:text-blue-800"
+            href="mailto:carreira@axisor.com.br"
+          >
+            carreira@axisor.com.br
+          </a>{" "}
+          e entraremos em contato assim que surgir uma oportunidade.
+        </p>
       </motion.div>
     </section>
   );
