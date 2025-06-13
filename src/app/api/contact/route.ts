@@ -1,8 +1,8 @@
-import { prisma } from "@/prisma/client";
 import { rateLimit } from "@/shared/lib/rate-limit";
 import { getIP } from "@/shared/lib/utils";
 import contactFormSchema from "@/shared/schema/contact-form";
 import { NextResponse } from "next/server";
+import { prisma } from "../../../../prisma/client";
 
 // Rate limiting configuration (max 5 requests per minute per IP)
 const limiter = rateLimit({
