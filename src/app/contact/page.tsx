@@ -10,8 +10,9 @@ import { Shield, Users, Zap } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contato - Axisor",
-  description: "Entre em contato conosco para obter ajuda e suporte.",
+  title: "Contato | Axisor Technologies Brasil",
+  description:
+    "Entre em contato com a Axisor Technologies Brasil. Estamos prontos para transformar suas ideias em soluções tecnológicas inovadoras.",
 };
 
 const quickLinks = [
