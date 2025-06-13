@@ -192,9 +192,9 @@ export function MenuBar() {
                       <span
                         className={cn(
                           "transition-colors duration-300",
-                          isActive
+                          isActive === item.href
                             ? item.iconColor
-                            : "text-foreground group-hover:" + item.iconColor
+                            : "text-muted-foreground group-hover:" + item.iconColor
                         )}
                       >
                         {item.icon}
@@ -221,7 +221,7 @@ export function MenuBar() {
                           "transition-colors duration-300",
                           isActive === item.href
                             ? item.iconColor
-                            : "text-foreground group-hover:" + item.iconColor
+                            : "text-muted-foreground group-hover:" + item.iconColor
                         )}
                       >
                         {item.icon}
