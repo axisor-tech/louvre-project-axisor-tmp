@@ -33,7 +33,13 @@ export const JobListings = ({}: JobListingsProps) => {
           <DotLottieReact src="assets/animations/sad.lottie" loop autoplay />
         </div>
 
-        <p className="text-muted-foreground max-w-2xl mx-auto text-center text-lg font-medium">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-muted-foreground max-w-2xl mx-auto text-center text-lg font-medium"
+        >
           <span className="block text-primary font-semibold mb-1">
             No momento, não temos vagas abertas.
           </span>
@@ -45,7 +51,7 @@ export const JobListings = ({}: JobListingsProps) => {
             carreira@axisor.com.br
           </a>{" "}
           e entraremos em contato assim que surgir uma oportunidade.
-        </p>
+        </motion.p>
       </motion.div>
     </section>
   );
