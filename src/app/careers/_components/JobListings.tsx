@@ -3,6 +3,7 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { staggerContainer, type JobPosition } from "../types";
 
 interface JobListingsProps {
@@ -44,12 +45,12 @@ export const JobListings = ({}: JobListingsProps) => {
             No momento, não temos vagas abertas.
           </span>
           Não se preocupe! Envie seu currículo para{" "}
-          <a
-            className="underline text-blue-600 hover:text-blue-800"
+          <Link
+            className="text-accent-foreground hover:text-accent-foreground/80"
             href="mailto:carreira@axisor.com.br"
           >
             carreira@axisor.com.br
-          </a>{" "}
+          </Link>{" "}
           e entraremos em contato assim que surgir uma oportunidade.
         </motion.p>
       </motion.div>
