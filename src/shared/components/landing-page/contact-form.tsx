@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Loader2, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 
-import { toast } from "sonner";
 import { Button } from "@/shared/components/ui/button";
 import {
   FormControl,
@@ -20,6 +19,7 @@ import { Input } from "@/shared/components/ui/input";
 import { Textarea } from "@/shared/components/ui/textarea";
 import contactFormSchema from "@/shared/schema/contact-form";
 import type { ContactFormSchema } from "@/shared/schema/types/contact-type";
+import { toast } from "sonner";
 
 export function ContactForm() {
   const form = useForm<ContactFormSchema>({
@@ -35,7 +35,7 @@ export function ContactForm() {
 
   const handleMutation = useMutation({
     mutationFn: async (data: ContactFormSchema) => {
-      const response = await fetch("http://127.0.0.1:8000/api/v1/contact/", {
+      const response = await fetch("/api/v1/contact/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
