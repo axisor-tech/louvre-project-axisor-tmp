@@ -206,7 +206,7 @@ export function MenuBar() {
                         "flex items-center gap-2 px-4 py-2 absolute inset-0 z-10 bg-transparent transition-colors rounded-xl",
                         isActive === item.href
                           ? `text-foreground ${item.iconColor}`
-                          : "text-muted-foreground group-hover:text-foreground"
+                          : "text-muted-foreground group-hover:text-foreground" 
                       )}
                       variants={backVariants}
                       transition={sharedTransition}
