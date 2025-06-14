@@ -1,31 +1,17 @@
 'use client'
-import { motion } from "framer-motion";
-import Link from "next/link";
 import { cn } from "@/shared/lib/utils";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const footerLinkCategories = [
   {
     title: "Empresa",
     links: [
-      { name: "Sobre", href: "/about" },
       { name: "Carreiras", href: "/careers" },
     ],
   },
-  {
-    title: "Soluções",
-    links: [
-      { name: "Plataforma Atena", href: "/solutions/atena" },
-      { name: "Gutenvox", href: "/solutions/gutenvox" },
-    ],
-  },
-  {
-    title: "Recursos",
-    links: [
-      { name: "Documentação", href: "/documentation" },
-      { name: "BlogAxisor", href: "/blog" },
-    ],
-  },
+  
   {
     title: "Termos",
     links: [
@@ -57,7 +43,7 @@ export function Footer() {
     <footer className="bg-background/80 backdrop-blur-sm border-t border-border mt-auto">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <motion.div
-          className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:gap-12"
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:gap-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
