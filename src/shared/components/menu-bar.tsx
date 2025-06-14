@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { Briefcase, Home, Mail, Menu, User, X } from "lucide-react";
+import { Briefcase, Home, Mail, Menu, X } from "lucide-react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -24,14 +25,6 @@ const menuItems: MenuItem[] = [
     gradient:
       "radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(37,99,235,0.06) 50%, rgba(29,78,216,0) 100%)",
     iconColor: "text-primary",
-  },
-  {
-    icon: <User className="h-5 w-5" />,
-    label: "Sobre",
-    href: "/about",
-    gradient:
-      "radial-gradient(circle, rgba(249,115,22,0.15) 0%, rgba(234,88,12,0.06) 50%, rgba(194,65,12,0) 100%)",
-    iconColor: "text-chart-5",
   },
   {
     icon: <Briefcase className="h-5 w-5" />,
@@ -133,9 +126,13 @@ const mobileMenuItemVariants = {
   },
 };
 
+console.log(itemVariants)
+
 
 export function MenuBar() {
   const isActive = usePathname()
+  useTheme()
+
   
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -194,7 +191,7 @@ export function MenuBar() {
                           "transition-colors duration-300",
                           isActive === item.href
                             ? item.iconColor
-                            : "text-muted-foreground group-hover:" + item.iconColor
+                            : `text-muted-foreground group-hover:${item.iconColor}`
                         )}
                       >
                         {item.icon}
@@ -217,11 +214,11 @@ export function MenuBar() {
                       }}
                     >
                       <span
-                        className={cn(
-                          "transition-colors duration-300",
+                        className={cn(  
+                          "transition-colors duration-300  ",
                           isActive === item.href
                             ? item.iconColor
-                            : "text-muted-foreground group-hover:" + item.iconColor
+                            : `text-muted-foreground group-hover:${glowVariants.active}`
                         )}
                       >
                         {item.icon}
